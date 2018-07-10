@@ -1,0 +1,27 @@
+
+<view class='buy_info' bindtap='clickTab'>
+    <view hover-class='none hover' url='../myTickets/myTickets' id="myTickets">
+        <text id="myTickets">我的订单</text>
+        <image id="myTickets" src='../../img/right.png'></image>
+    </view>
+    <view hover-class='none hover' url='' id="coupon">
+        <text id="coupon">优惠券</text>
+        <image id="coupon" src='../../img/right.png'></image>
+    </view>
+    <view hover-class='none hover' url='' id="vipCard">
+        <text id="vipCard">影院会员卡</text>
+        <image id="vipCard" src='../../img/right.png'></image>
+    </view>
+</view>
+
+<view class='want_info'  bindtap='clickTab'>
+    <view hover-class='none hover' url='' id="wantFilms">
+        <text id="wantFilms">想看的电影</text>
+        <image id="wantFilms" src='../../img/right.png'></image>
+    </view>
+    <view hover-class='none hover' url='' id="watchedFilm">
+        <text id="watchedFilm">看过的电影</text>
+        <image id="watchedFilm" src='../../img/right.png'></image>
+    </view>
+</view>
+<view class='bottom'>©猫眼电影 客服电话：<text class='phone'>1010-5335</text></view>

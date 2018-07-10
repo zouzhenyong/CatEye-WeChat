@@ -1,0 +1,98 @@
+page{
+    background: #f5f5f5;
+}
+image{
+    width: 400rpx;
+    height: 245rpx;
+}
+
+.no_film{
+    font-size: 30rpx;
+    margin-bottom: 30rpx;
+}
+.red{
+    background: #f03d37;
+    color: white;
+}
+.title{
+    padding: 15rpx 20rpx;
+    color: #666;
+    font-size: 26rpx;
+}
+.wantFilm_container{
+    background: white;
+}
+.wantFilm_list {
+    padding: 0 20rpx;
+    padding-right: 0;
+}
+
+.wantFilm_list_inner {
+    padding: 20rpx 0;
+    display: flex;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.wantFilm_img {
+    margin-right: 20rpx;
+    height: 188rpx;
+    position: relative;
+}
+
+.wantFilm_img>image:first-child {
+    width: 135rpx;
+    height: 188rpx;
+}
+
+.playBtn {
+    position: absolute;
+    width: 65rpx;
+    height: 65rpx;
+    left: 38rpx;
+    top: 64rpx;
+}
+
+.wantFilm_info {
+    margin-top: 6rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 456rpx;
+    justify-content: space-between;
+    color: #666;
+    font-size: 26rpx;
+    height: 130rpx;
+}
+
+.wantFilm_actor {
+    width: 420rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user_point>text {
+    color: #faaf00;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+
+.user_point>text:last-child {
+    font-size: 22rpx;
+    font-weight: normal;
+}
+.film_3D {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    border: 1rpx solid #3c9fe6;
+    border-radius: 6rpx;
+    color: white;
+    background: #3c9fe6;
+    transform: scale(0.85);
+    padding: 0 6rpx;
+    padding-bottom: 2rpx;
+    margin-bottom: 3rpx;
+}
+.hover{
+    background: #f5f5f5;
+}

@@ -1,0 +1,37 @@
+<!--tab-->
+<view class="navbar">
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;">
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{newDate[index].week}}{{newDate[index].date}}</text>
+    </scroll-view>
+</view>
+
+<!--影院  -->
+<view wx:for="{{navbar}}" wx:key="{{index}}" hidden="{{currentTab!==index}}" style='background:wite'>
+    <navigator wx:for="{{cinema_data}}" wx:key="{{index}}" url="../room/room?id={{item.cinema._id}}" style='padding:0 20rpx' hover-class='hover'>
+        <view class='cinema'>
+            <view class='cinema_name'>
+                <text>{{item.cinema.cinema_name}}</text>
+                <view>
+                    <text>{{18+index*2}}</text>
+                    <text>元起</text>
+                </view>
+            </view>
+            <view class='cinema_info'>
+                <view style='display:flex;justify-content: space-between;align-items:center'>
+                    <text class='cinema_add'>{{item.cinema.cinema_add}}</text>
+                    <text class='distance'>1.{{index}}km</text>
+                </view>
+                <view class='cinema_item'>
+                    <text>{{item.cinema.logo_seat[0]}}</text>
+                    <text wx:for="{{item.cinema.logo_room}}" wx:key="{{index}}">{{item}}</text>
+                    <text wx:if="{{item.cinema.logo_eat.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.cinema.logo_eat[0]}}</text>
+                    <text wx:if="{{item.cinema.logo_card.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.cinema.logo_card}}</text>
+                </view>
+                <view wx:if="{{item.cinema.logo_vip.length!=0}}">
+                    <text class='cinema_card'>卡</text>
+                    <text class='card_intro'>开卡特惠，首单2张立减14元</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>

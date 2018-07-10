@@ -1,0 +1,113 @@
+<view class='cinema_info'>
+    <view class='cinema_name'>
+        <text>{{filmData[0].cinema[0].cinema_name}}</text>
+        <text>{{filmData[0].cinema[0].cinema_add}}</text>
+    </view>
+    <view class='gray_border'></view>
+    <view class='add'>
+        <image class='position_icon' src='../../img/position.png'></image>
+        <text>地图</text>
+    </view>
+</view>
+<view style='background: rgba(0, 0, 0, 0.4);position:relative' class="page-section page-section-spacing swiper">
+    <swiper style='height:296rpx' bindchange="changeImg" previous-margin="278rpx" current='{{current}}' next-margin="278rpx" duration="300">
+        <block wx:for="{{filmImgs}}" wx:key="*this" >
+            <swiper-item style="padding:34rpx 0;text-align:center;">
+                <view class='film_box' style="transform: {{clickFlag[index]?'scale(1.14)':''}};">
+                    <image style="outline:{{clickFlag[index]?'2rpx solid white':''}};" bindtap='clickFimImg' class='film_img' id="{{index}}" src='{{FileIP+filmImgs[index]}}'></image>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class='to_top'></view>
+</view>
+<view class='film_background'>
+    <image src='{{FileIP+filmImgs[filmIndex]}}'></image>
+</view>
+
+<view class='film_info'>
+    <view class='film_name'>
+        <text>{{filmData[filmIndex].film[0].film_name}}</text>
+        <view>
+            <text>{{filmData[filmIndex].film[0].film_user_point}}</text>
+            <text>分</text>
+        </view>
+    </view>
+    <view class='film_time'>
+        <text>{{filmData[filmIndex].film[0].film_duration}}</text>
+        <text class='line'>|</text>
+        <text>{{filmData[filmIndex].film[0].film_type}}</text>
+        <text class='line'>|</text>
+        <text>{{filmData[filmIndex].film[0].film_actor}}</text>
+    </view>
+</view>
+
+<view class="navbar" scroll-x="true" style=" white-space: nowrap; display: flex;">
+    <view>
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{weeks[index]}}{{item}}</text>
+    </view>
+</view>
+<view wx:for="{{navbar}}" wx:key="{{index}}" hidden="{{currentTab!==index}}" style='background:wite'>
+    <navigator wx:if="{{!saleFlag}}" url='../saleCard/saleCard?cinemaId={{filmData[0].cinema[0]._id}}' class='cinema_card'>
+        <view class='card'>折扣卡</view>
+        <text class='card_info'>购票享低价，每张立减8元</text>
+        <view class='buy_card'>
+            <text>限时38元开卡</text>
+            <image class='right' src='../../img/right.png'></image>
+        </view>
+    </navigator>
+    <view wx:else url='../saleCard/saleCard?cinemaId={{filmData[0].cinema[0]._id}}' class='cinema_card' style='background:rgb(255,240,240)'>
+        <view class='card' style='background:#f03d37'>折扣卡</view>
+        <text class='card_info' style='color:#f03d37'>已有折扣卡，购票享受每张立减8元</text>
+    </view>
+    <view class='buy_container'>
+        <view bindtap='selectSeat' wx:for="{{nowTickets}}" id="{{index}}" wx:key="{{index}}" hover-class='hover' style='padding-left:30rpx'>
+            <view class='film_time_info'>
+                <view class='time'>
+                    <view>{{item.start_time}}</view>
+                    <view>{{item.end_time}}散场</view>
+                </view>
+                <view class='film_type'>
+                    <view>{{item.film[0].film_nd}}</view>
+                    <view>{{item.room[0].room_name}}</view>
+                </view>
+                <view>
+                    <view class='film_price'>
+                        <view>
+                            <text>{{item.price}}</text>
+                            <text style='font-size:22rpx'>元</text>
+                        </view>
+                        <view class='sale_card'>
+                            <text>折扣卡</text>
+                            <text>{{item.price-8}}元</text>
+                        </view>
+                    </view>
+                    <view style='font-size:22rpx;color:#999;margin-top:4rpx'>折扣卡首单特惠</view>
+                </view>
+                <view class='buy_btn'>购票</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='gray'></view>
+<view class='eat_box'>
+    <view class='eat_top'>观影套餐(4)</view>
+    <view hover-class='hover' wx:for="{{eatData}}" wx:key="{{index}}" style='padding-left:25rpx'>
+        <view class='eat_mean'>
+            <image class='eat_img' src='{{FileIP+item.img}}'></image>
+            <view style='width:100%'>
+                <view class='eat_info'>
+                    <view>{{item.name}}</view>
+                    <view>{{item.info}}</view>
+                </view>
+                <view class='eat_price_info'>
+                    <view class='eat_price'>
+                        <text>{{item.price}}</text>
+                        <text>影院价:{{item.cinema_price}}</text>
+                    </view>
+                    <view class='eat_num'>已售{{item.had_sale}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

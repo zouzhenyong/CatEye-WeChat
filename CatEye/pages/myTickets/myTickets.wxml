@@ -1,0 +1,28 @@
+<view wx:if="{{ticketsData.length!=0}}" wx:for="{{ticketsData}}" wx:key="{{index}}">
+    <view class='gray'></view>
+    <view class='ticket_container'>
+        <navigator url="../room/room?id={{item.cinemaId}}" hover-class='none' class='film_name'>
+            <text>{{item.cinema_name}}</text>
+            <image src='../../img/right.png'></image>
+        </navigator>
+
+        <view class='film_info'>
+            <image src='{{FileIP+item.film_img}}'></image>
+            <view class='ticket_info'>
+                <view>{{item.film_name}} {{item.seat.length}}张</view>
+                <view>{{item.date}} {{item.time}}</view>
+                <view style='display:flex'>
+                    <view style='margin-right:10rpx' wx:for="{{item.seat}}" wx:key="{{index}}" wx:for-item="seat">{{index==0?item.room_name:''}}{{seat.col+1}}排{{seat.row+1}}座</view>
+                </view>
+            </view>
+        </view>
+        <view class='price'>
+            <view>总价：{{item.price*item.seat.length}}元</view>
+            <view>待观影</view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{ticketsData.length==0}}" style='text-align: center;margin-top:40%'>
+    <image class='cat' src='../../img/no_search.png'></image>
+    <view class='no_film'>暂无订单</view>
+</view>

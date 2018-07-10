@@ -1,0 +1,107 @@
+
+<!--导航条-->
+<view class="navbar">
+    <view style='line-height:40rpx'>
+        <text class='address'>成都</text>
+        <text class="address_icon"></text>
+    </view>
+    <view>
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+    </view>
+    <view bindtap='clickSearch' class='search'>
+        <image class='search_img' src='../../img/search.png'></image>
+    </view>
+</view>
+
+<!--热映-->
+<view hidden="{{currentTab!==0}}">
+    <view class='hotFilm_container'>
+        <view wx:for="{{hotFilm_data}}" wx:key="{{index}}" class='hotFilm_list' hover-class='hover'>
+            <view class='hotFilm_list_inner'>
+                <view class='hotFilm_img'>
+                    <image src="{{FileIP+item.film[0].film_bill[0]}}"></image>
+                    <image class='playBtn' src='../../img/play.png'></image>
+                </view>
+                <navigator url="../filmDetails/filmDetails?id={{item.film[0]._id}}&type=hot" hover-class="none hover" style='display:flex;flex-direction:column'>
+                    <view style='display:flex;align-items:center;justify-content: space-between;'>
+                        <view class='hotFilm_name' style='display:flex;align-items:center'>
+                            <text style='font-size:34rpx;margin-right:4rpx;color:black;'>{{item.film[0].film_name}}</text>
+                            <text wx:if="{{item.film[0].film_nd!='2D'}}" class='film_3D'>{{item.film[0].film_nd}}</text>
+                        </view>
+                        <view class='user_point'>
+                            <text>{{item.film[0].film_user_point}}</text>
+                            <text>分</text>
+                        </view>
+                    </view>
+                    <view style='display:flex;align-items:center'>
+                        <view class='hotFilm_info'>
+                            <text>{{item.film[0].film_type}}</text>
+                            <text class='hotFilm_actor'>主演:{{item.film[0].film_actor}}</text>
+                            <text style='color:#999'>今天{{2+index}}家影院放映{{5+index}}场</text>
+                        </view>
+                        <view catchtap='buy_ticket' id="{{item.film[0]._id}}" class='button'>购票</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<!--待映-->
+<view hidden="{{currentTab!==1}}">
+
+    <!-- 近期最受欢迎  -->
+    <view class='comingFilm_top'>
+        <text class='hotFilm_head'>近期最受欢迎</text>
+        <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex;">
+            <navigator url="../filmDetails/filmDetails?id={{item.film[0]._id}}&type=coming" class='welcome_film' wx:for="{{welcomeFilm_data}}" wx:key="{{index}}" hover-class="none hover">
+                <view style='position:relative'>
+                    <image style='width:165rpx;height:225rpx' src="{{FileIP+item.film[0].film_bill[0]}}"></image>
+                    <!-- <view catchtap='clickWant' class='want_img'>
+                        <image wx:if="{{!wantFlag}}" id="{{item.film[0]._id}}" src='../../img/want.png'></image>
+                        <image wx:else  id="{{item.film[0]._id}}" src='../../img/want_white.png' ></image>
+                    </view> -->
+                </view>
+                <view style='display:flex;flex-direction:column;font-size:24rpx;'>
+                    <text class='welcomeFilm_name'>{{item.film[0].film_name}}</text>
+                    <text style='color:#666'>{{item.film[0].film_want}}人想看</text>
+                    <text style='color:#666'>{{item.film[0].film_time}}</text>
+                </view>
+            </navigator>
+        </scroll-view>
+    </view>
+    <view class='gray'></view>
+    <!-- 待映列表 -->
+    <view>
+        <view wx:for="{{comingFilm_data}}" wx:key="{{index}}">
+            <view wx:if="{{comingFilm_data[index-1].film[0].film_time!=comingFilm_data[index].film[0].film_time}}" class='coming_film_time'>{{comingFilm_data[index].film[0].film_time}} {{comingFilm_data[index].film[0].week}}</view>
+            <view class='hotFilm_list' hover-class='hover'>
+                <view class='hotFilm_list_inner'>
+                    <view class='hotFilm_img'>
+                        <image src="{{FileIP+item.film[0].film_bill[0]}}"></image>
+                        <image class='playBtn' src='../../img/play.png'></image>
+                    </view>
+                    <navigator url="../filmDetails/filmDetails?id={{item.film[0]._id}}&type=coming" hover-class="none" style='display:flex;flex-direction:column'>
+                        <view style='display:flex;align-items:center;justify-content: space-between;'>
+                            <view class='hotFilm_name' style='display:flex;align-items:center;width:385rpx;'>
+                                <text style='font-size:34rpx;margin-right:4rpx;color:black;'>{{item.film[0].film_name}}</text>
+                                <text wx:if="{{item.film[0].film_nd!='2D'}}" class='film_3D'>{{item.film[0].film_nd}}</text>
+                            </view>
+                            <view class='user_point'>
+                                <text>{{comingFilm_data[index].film[0].film_want}}</text>
+                                <text>人想看</text>
+                            </view>
+                        </view>
+                        <view style='display:flex;align-items:center'>
+                            <view class='hotFilm_info'>
+                                <text>{{item.film[0].film_type}}</text>
+                                <text class='hotFilm_actor'>主演:{{item.film[0].film_actor}}</text>
+                                <text>{{comingFilm_data[index].film[0].film_old_date}}大陆上映</text>
+                            </view>
+                            <view catchtap='buy_ticket' id="{{item.film[0]._id}}" class='button comingFilm_btn'>预售</view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,103 @@
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar {
+    flex: none;
+    background: #fff;
+    border-bottom: 1rpx solid #e6e6e6;
+    display: flex;
+    align-items: center;
+    height: 84rpx;
+    background: #f5f5f5;
+}
+
+.address {
+    font-size: 26rpx;
+    color: #666;
+    margin-left: 24rpx;
+}
+
+.address_icon {
+    display: inline-block;
+    height: 1rpx;
+    border: 11rpx solid transparent;
+    border-top-color: #b0b0b0;
+    position: relative;
+    top: 8rpx;
+    left: 5rpx;
+}
+
+.search_input {
+    border: 1rpx solid #e6e6e6;
+    width: 100%;
+    margin-right: 20rpx;
+    border-radius: 8rpx;
+    background: white;
+    height: 54rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search_icon{
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 8rpx;
+}
+/*影院  */
+.cinema{
+    padding: 25rpx 0;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+.cinema_name{
+    display: flex;
+    align-items: center;
+}
+.cinema_name>text{
+    font-size: 32rpx;
+    margin-right: 20rpx;
+}
+.cinema_name>view>text{
+    color: #f03d37;
+    font-size: 32rpx;
+}
+.cinema_name>view>text:last-child{
+    font-size: 22rpx;
+}
+.cinema_add{
+    color:#666;
+    font-size: 26rpx;
+}
+.cinema_item>text{
+    font-size: 22rpx;
+    border: 1rpx solid #3c9fe6;
+    color: #3c9fe6;
+    border-radius: 5rpx;
+    padding: 0rpx 7rpx;
+    margin-right: 6rpx;
+}
+.cinema_card{
+    background: rgb(162,125,218);
+    font-size: 22rpx;
+    color: white;
+    border-radius: 5rpx;
+    padding: 0rpx 6rpx;
+}
+.card_intro{
+    color: #999;
+    font-size: 22rpx;
+    margin-left: 10rpx;
+}
+.cinema_info>view{
+    margin: 4rpx 0;
+}
+.distance{
+    color: #999;
+    font-size: 26rpx;
+}
+/*hover效果  */
+.hover{
+    background: #f5f5f5; 
+}

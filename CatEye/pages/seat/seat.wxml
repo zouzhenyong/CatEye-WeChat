@@ -1,0 +1,96 @@
+<view class='cinema_info'>
+    <view class='cinema_name'>
+        <text>{{matchData.cinema[0].cinema_name}}</text>
+        <text>{{time}} {{date}} {{matchData.start_time}} {{matchData.film[0].film_nd}}</text>
+    </view>
+</view>
+<view class='seatImg'>
+    <view>
+        <image src="../../img/seat_01.png"></image>
+        <text>可选</text>
+    </view>
+    <view>
+        <image src="../../img/seat_02.png"></image>
+        <text>不可选</text>
+    </view>
+    <view>
+        <image src="../../img/seat_03.png"></image>
+        <text>已选</text>
+    </view>
+</view>
+<view class='seat'>
+
+    <view class='screen'>
+        <image src="../../img/screen_bg.png"></image>
+        <text class='srceen_name'>1号厅</text>
+    </view>
+    <view class='seatList'>
+        <text class='screen_middle'>银幕中央</text>
+        <view style='display:flex;position:relative;'>
+            <view class='line'></view>
+            <view class='seat_num'>
+                <view wx:for="{{seat}}" wx:key="{{index}}">
+                    {{index+1}}
+                </view>
+            </view>
+            <view>
+                <view style='display:flex;margin-top:10rpx;margin-left:40rpx' wx:for="{{seat}}" wx:for-item="itemSeat" wx:for-index="idx" wx:key="{{idx}}">
+                    <view class='seat_block' wx:for="{{itemSeat}}" wx:key="{{index}}">
+                        <image wx:if="{{item==1}}" class='seat_img' data-flag='{{false}}' data-seat="{{[idx,index]}}" src='{{imgList[0]}}' bindtap='clickSeat'></image>
+                        <image wx:if="{{item==3}}" class='seat_img' data-flag='{{true}}' data-seat="{{[idx,index]}}" src='{{imgList[2]}}' bindtap='clickSeat'></image>
+                        <image wx:if="{{item==2}}" class='seat_img' src='{{imgList[1]}}'></image>
+                        <view wx:if="{{item==0}}" class='seat_img'></view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <image class='logo_img' src='../../img/logo.png'></image>
+    </view>
+
+</view>
+<view wx:if="{{selectedSeat.length==0}}" class='recom_seat'>
+    <view class='seat_title'>推荐座位</view>
+    <view class='buy_seat_num'>
+        <view>
+            1人
+        </view>
+        <view>
+            2人
+        </view>
+        <view>
+            3人
+        </view>
+        <view>
+            4人
+        </view>
+        <view>
+            5人
+        </view>
+    </view>
+    <view class='buy_ticket'>
+        <text style='color:#999'>一次性最多购买4张</text>
+        <view class='buyBtn'>请先选座</view>
+    </view>
+</view>
+<view wx:else class='recom_seat'>
+    <view class='seat_title'>已选座位</view>
+
+    <view class='buy_seat_display'>
+        <view wx:for="{{selectedSeat}}" wx:key="{{index}}" bindtap='delSeat' data-seat='{{[item.col,item.row]}}'>
+            <text>{{item.col+1}}排{{item.row+1}}座</text>
+            <text>×</text>
+        </view>
+    </view>
+    <view class='buy_ticket'>
+        <view class='price'>
+            <view>
+                <text>{{saleFlag?(price-8)*selectedSeat.length:price*selectedSeat.length}}</text>
+                <text wx:if="{{saleFlag}}">元（ 优惠8×{{selectedSeat.length}}={{8*selectedSeat.length}}元 ）</text>
+                <text wx:else>元</text>
+            </view>
+            <text>{{saleFlag?price-8:price*selectedSeat.length}}×{{selectedSeat.length}}</text>
+        </view>
+        <view class='buyBtn selected' bindtap='buyBtn'>确认选座</view>
+    </view>
+</view>

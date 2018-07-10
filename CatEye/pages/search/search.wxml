@@ -1,0 +1,76 @@
+<!--搜索框-->
+<view class="navbar">
+    <view class='search_input' style='position:relative' bindtap='search'>
+        <image class='search_icon' src='../../img/search_gray.png'></image>
+        <input bindinput="search" wx:if="{{searchType=='film'}}" auto-focus='true' type="text" readonlyunselectable="on" placeholder="找影视剧、影院" placeholder-style="color: #bfbfbf;font-size:26rpx" />
+        <input bindinput="search" wx:else type="text" readonlyunselectable="on" auto-focus='true' placeholder="找影院" placeholder-style="color: #bfbfbf;font-size:26rpx" />
+    </view>
+    <text class='cancle' bindtap='clickBack'>取消</text>
+</view>
+<view wx:if="{{!dataFlag&&!cinemaData.length&&!filmData.length}}" class='noSearch'>
+    <image src='../../img/no_search.png'></image>
+    <text>没有找到相关内容</text>
+</view>
+<!--展示  -->
+<view>
+    <!--影视  -->
+    <view wx:if="{{filmData.length}}" style='background:white'>
+        <view class='film_title'>电影/电视剧</view>
+        <view wx:for="{{filmData}}" wx:key="{{index}}" class='searchFilm_list' hover-class='hover'>
+            <view class='searchFilm_list_inner'>
+                <view class='searchFilm_img'>
+                    <image src="{{FileIP+item.film_bill[0]}}"></image>
+                </view>
+                <navigator url="../filmDetails/filmDetails?id={{item._id}}&type=hot" hover-class="hover" style='display:flex;flex-direction:column'>
+                    <view style='display:flex;align-items:center;justify-content: space-between;'>
+                        <view class='searchFilm_name' style='display:flex;align-items:center'>
+                            <text style='font-size:34rpx;margin-right:4rpx;color:black;'>{{item.film_name}}</text>
+                        </view>
+                        <view class='user_point'>
+                            <text>{{item.film_user_point}}</text>
+                            <text>分</text>
+                        </view>
+                    </view>
+                    <view style='display:flex;align-items:center'>
+                        <view class='searchFilm_info'>
+                            <text>{{item.film_English_name}}</text>
+                            <text class='searchFilm_actor'>{{item.film_type}}</text>
+                            <text wx:if="{{item.film_area=='大陆上映'}}">{{item.film_time}}大陆上映</text>
+                            <text wx:else>{{item.film_time}}{{item.film_area}}上映</text>
+                        </view>
+                        <view catchtap='buy_ticket' id="{{item._id}}" class='button'>购票</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <!--灰条  -->
+        <view class='gray'></view>
+    </view>
+    <!--影院  -->
+    <view wx:if="{{cinemaData.length}}" style='background:white'>
+        <view class='film_title'>影院</view>
+        <navigator wx:for="{{cinemaData}}" wx:key="{{index}}" url="../room/room?id={{item._id}}" style='padding-left:20rpx' hover-class='hover'>
+            <view class='cinema'>
+                <view class='cinema_name'>
+                    <text>{{item.cinema_name}}</text>
+                    <view>
+                        <text>{{18+index*2}}</text>
+                        <text>元起</text>
+                    </view>
+                </view>
+                <view class='cinema_info'>
+                    <view style='display:flex;justify-content: space-between;align-items:center'>
+                        <text class='cinema_add'>{{item.cinema_add}}</text>
+                        <text class='distance'>1.{{index}}km</text>
+                    </view>
+                    <view class='cinema_item'>
+                        <text>{{item.logo_seat[0]}}</text>
+                        <text wx:for="{{item.logo_room}}" wx:key="{{index}}">{{item}}</text>
+                        <text wx:if="{{item.logo_eat.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.logo_eat[0]}}</text>
+                        <text wx:if="{{item.logo_card.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.logo_card}}</text>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>

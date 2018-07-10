@@ -1,0 +1,262 @@
+page{
+    padding-bottom: 188rpx;
+}
+.sale_img {
+    width: 65rpx;
+    height: 65rpx;
+    margin-right: 20rpx;
+}
+
+.card {
+    background: #3474bc;
+    margin: 25rpx;
+    border-radius: 18rpx;
+    color: white;
+    height: 380rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    padding: 30rpx;
+}
+
+.middle {
+    text-align: center;
+    font-size: 30rpx;
+    margin-bottom: 80rpx;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    background-color: rgba(0, 0, 0, 0.08);
+    padding: 15rpx 20rpx;
+    border-bottom-right-radius: 18rpx;
+    border-bottom-left-radius: 18rpx;
+    align-items: center;
+}
+
+.price {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10rpx 20rpx;
+    border-radius: 40rpx;
+    margin-right: 10rpx;
+}
+
+.store {
+    position: absolute;
+    right: 0;
+    border: 68rpx solid transparent;
+    border-top-right-radius: 18rpx;
+    border-top-color: rgba(0, 0, 0, 0.1);
+    border-right-color: rgba(0, 0, 0, 0.1);
+}
+
+.store_text {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    right: 3rpx;
+    top: 28rpx;
+    font-size: 26rpx;
+    transform: rotate(45deg);
+}
+
+.gray {
+    background: #f5f5f5;
+    width: 100%;
+    height: 20rpx;
+    border-top: 1rpx solid #e6e6e6;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.title {
+    padding: 25rpx;
+    padding-left: 0;
+    border-bottom: 1rpx solid #e6e6e6;
+    color: #999;
+    font-size: 30rpx;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 25rpx;
+}
+
+.text {
+    border-bottom: 1rpx solid #e6e6e6;
+    padding: 25rpx;
+    padding-left: 0;
+}
+.list:last-child>.text{
+    border-bottom: 0;
+}
+.text>view:first-child {
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+
+.text>view:last-child {
+    font-size: 26rpx;
+    color: #999;
+    line-height: 40rpx;
+}
+
+.tips {
+    padding: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.tips>view {
+    margin-bottom: 20rpx;
+}
+
+.cinema_num {
+    padding: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.city {
+    padding: 10rpx 20rpx;
+    background: #f5f5f5;
+    font-size: 28rpx;
+    color: gray;
+}
+
+/*影院  */
+
+.navigator {
+    border-bottom: 1rpx solid #e6e6e6;
+    padding: 0 25rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cinema {
+    padding: 25rpx 0;
+    background: white;
+}
+
+.cinema_name {
+    display: flex;
+    align-items: center;
+}
+
+.cinema_name>text {
+    font-size: 32rpx;
+    margin-right: 20rpx;
+}
+
+.cinema_name>view>text {
+    color: #f03d37;
+    font-size: 32rpx;
+}
+
+.cinema_name>view>text:last-child {
+    font-size: 22rpx;
+}
+
+.cinema_add {
+    color: #666;
+    font-size: 26rpx;
+    margin-right: 20rpx;
+    line-height:8rpx;
+}
+
+.cinema_item>text {
+    font-size: 22rpx;
+    border: 1rpx solid #3c9fe6;
+    color: #3c9fe6;
+    border-radius: 5rpx;
+    padding: 0rpx 7rpx;
+    margin-right: 6rpx;
+}
+.cinema_info>view {
+    margin: 4rpx 0;
+}
+
+.distance {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.button {
+    border-radius: 8rpx;
+    height: 55rpx;
+    width: 94rpx;
+    text-align: center;
+    line-height: 55rpx;
+    font-size: 24rpx;
+    background: #f03d37;
+    color: white;
+    font-weight: normal;
+}
+
+.buyBtn {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 250rpx;
+    background: rgb(238,182,177);
+    text-align: center;
+    border-radius: 6rpx;
+    color: white;
+    font-size: 30rpx;
+}
+.agree{
+    background: #f03d37;
+}
+.buyBlock{
+    padding: 30rpx 0;
+    border-top: 1rpx solid #e6e6e6;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    padding:0em 25rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+checkbox{
+    margin-right: 5rpx;
+}
+.checkbox>view>text{
+    color: #f03d37;
+}
+.btn{
+    display: flex;
+    padding:0 25rpx;
+    justify-content: space-between;
+    align-items: center;
+    color: #f03d37;
+    font-size: 40rpx;
+}
+.btn>view>text{
+    font-size: 24rpx;
+}
+/*hover效果  */
+
+.hover {
+    background: #f5f5f5;
+}

@@ -1,0 +1,37 @@
+<view wx:if="{{filmArr.length!=0}}">
+    <view class='title'>想看{{filmArr.length}}部电影</view>
+    <view class='wantFilm_container'>
+
+        <view wx:for="{{filmArr}}" wx:key="{{index}}" class='wantFilm_list' hover-class='hover'>
+            <view class='wantFilm_list_inner'>
+                <view class='wantFilm_img'>
+                    <image src="{{FileIP+item.film_bill[0]}}"></image>
+                    <image class='playBtn' src='../../img/play.png'></image>
+                </view>
+                <navigator url="../filmDetails/filmDetails?id={{item._id}}&type=hot" hover-class="hover" style='display:flex;flex-direction:column'>
+                    <view style='display:flex;align-items:center;justify-content: space-between;width:550rpx'>
+                        <view class='wantFilm_name' style='display:flex;align-items:center'>
+                            <text style='font-size:34rpx;margin-right:4rpx;color:black;'>{{item.film_name}}</text>
+                            <text wx:if="{{item.film_nd!='2D'}}" class='film_3D'>{{item.film_nd}}</text>
+                        </view>
+                        <view class='user_point'>
+                            <text>{{item.film_want}}</text>
+                            <text>人想看</text>
+                        </view>
+                    </view>
+                    <view style='display:flex;align-items:center'>
+                        <view class='wantFilm_info'>
+                            <text>{{item.film_English_name}}</text>
+                            <text class='wantFilm_actor'>{{item.film_type}}</text>
+                            <text style='color:#666'>{{item.film_time}}大陆上映</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else style='text-align: center;margin-top:40%'>
+    <image src='../../img/no_search.png'></image>
+    <view class='no_film'>暂无想看的电影</view>
+</view>

@@ -1,0 +1,61 @@
+<view class='block'>
+    <view class='price'>
+        <view>5<text>元</text></view>
+        <view style='font-size:26rpx;'>代金券</view>
+    </view>
+    <view class='tips'>
+        <view class='cinema_name'>
+            <view>CGV影城(高新店)专享代金券</view>
+            <view>CGV影城(高新店)专享。购票时请在“活动与抵用券”栏选择该券</view>
+        </view>
+        <view class='time'>有效期至 2018-08-31</view>
+    </view>
+    <view class='store'></view>
+    <text class='store_text'>商家</text>
+</view>
+<view class='block'>
+    <view class='price'>
+        <view>8<text>元</text></view>
+        <view style='font-size:26rpx;'>代金券</view>
+    </view>
+    <view class='tips'>
+        <view class='cinema_name'>
+            <view>星美国际影城(春熙路店)代金券</view>
+            <view>星美国际影城(春熙路店)专享。购票时请在“活动与抵用券”栏选择该券</view>
+        </view>
+        <view class='time'>有效期至 2018-07-31</view>
+    </view>
+        <view class='store'></view>
+    <text class='store_text'>商家</text>
+</view>
+<view class='block'>
+    <view class='price'>
+        <view>5<text>元</text></view>
+        <view style='font-size:26rpx;'>代金券</view>
+    </view>
+    <view class='tips'>
+        <view class='cinema_name'>
+            <view>万达影城(金牛店)专享代金券</view>
+            <view>万达影城(金牛店)专享。购票时请在“活动与抵用券”栏选择该券</view>
+        </view>
+        <view class='time'>有效期至 2018-08-20</view>
+    </view>
+        <view class='store'></view>
+    <text class='store_text'>商家</text>
+</view>
+<view class='block timeOut'>
+    <view class='price'>
+        <view>6<text>元</text></view>
+        <view style='font-size:26rpx;'>代金券</view>
+    </view>
+    <view class='tips'>
+        <view class='cinema_name'>
+            <view>太平洋影城(春熙路店)代金券</view>
+            <view>太平洋影城(春熙路店)专享。购票时请在“活动与抵用券”栏选择该券</view>
+        </view>
+        <view class='time'>已到期</view>
+    </view>
+        <view class='store'></view>
+    <text class='store_text'>商家</text>
+    <image class='timeout_img' src='../../img/timeout.png'></image>
+</view>

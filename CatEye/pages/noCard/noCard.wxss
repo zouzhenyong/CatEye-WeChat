@@ -1,0 +1,11 @@
+page {
+    background: #f5f5f5;
+}
+image{
+    width: 400rpx;
+    height: 245rpx;
+}
+.no_card{
+    font-size: 30rpx;
+    margin-bottom: 30rpx;
+}

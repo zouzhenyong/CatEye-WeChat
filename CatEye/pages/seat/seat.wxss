@@ -1,0 +1,232 @@
+.cinema_info {
+    padding-left: 25rpx;
+}
+
+.cinema_name {
+    padding: 25rpx;
+    padding-left: 0;
+    font-size: 32rpx;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.cinema_name>text:last-child {
+    font-size: 26rpx;
+    margin-top: 6rpx;
+    color: #999;
+}
+
+.seatImg {
+    padding: 25rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.seatImg, .seatImg>view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seatImg>view {
+    margin: 0 20rpx;
+    font-size: 26rpx;
+}
+
+.seatImg>view>image {
+    width: 41rpx;
+    height: 35rpx;
+    margin-right: 8rpx;
+}
+
+/*屏幕  */
+
+
+
+.seat {
+    background: #f5f5f5;
+    height: 729rpx;
+    border: 1rpx solid #e6e6e6;
+    overflow-x: auto;
+}
+
+.screen {
+    text-align: center;
+    position: relative;
+}
+
+.screen>image {
+    width: 340rpx;
+    height: 33rpx;
+    position: relative;
+    top: -8rpx;
+}
+
+.srceen_name {
+    font-size: 22rpx;
+    position: absolute;
+    left: 50%;
+    margin-left: -28rpx;
+    top: -1rpx;
+}
+
+.seatList {
+    font-size: 22rpx;
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.screen_middle {
+    background: #e6e6e6;
+    padding: 5rpx 8rpx;
+    border-radius: 5rpx;
+    position: relative;
+    z-index: 1;
+}
+
+.seat_img {
+    width: 41rpx;
+    height: 35rpx;
+}
+
+.seat_block {
+    margin: 4rpx;
+    width: 41rpx;
+    height: 35rpx;
+}
+
+.seat_num {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10rpx;
+    color: white;
+    margin-right: 20rpx;
+    position: fixed;
+    left: 20rpx;
+}
+
+.seat_num>view {
+    margin: 20rpx 8rpx;
+    /* line-height: 30rpx; */
+}
+
+.line {
+    border-left: 2rpx dashed #999;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    top: 0;
+    z-index: 0;
+}
+
+/*推荐座位  */
+.recom_seat {
+    padding: 15rpx 20rpx;
+}
+
+.seat_title {
+    color: #666;
+    font-size: 28rpx;
+}
+
+.buy_seat_num {
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e6e6e6;
+    padding-bottom: 15rpx;
+}
+
+.buy_seat_num>view {
+    text-align: center;
+    border-radius: 7rpx;
+    border: 1rpx solid #e6e6e6;
+    font-size: 26rpx;
+    padding: 12rpx 0;
+    width: 120rpx;
+}
+
+.buy_ticket {
+    display: flex;
+    justify-content: space-between;
+    padding: 15rpx 0;
+    padding-bottom: 0;
+    font-size: 28rpx;
+    align-items: center;
+}
+
+.buyBtn {
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 250rpx;
+    background: rgb(241, 192, 113);
+    text-align: center;
+    border-radius: 6rpx;
+    color: white;
+    border: 1rpx solid rgb(192, 126, 43);
+}
+
+.selected {
+    background: rgb(240, 157, 56);
+    border: 1prx solid rgb(212,173,109);
+}
+.price{
+    line-height: 32rpx;
+}
+.price>view>text:first-child {
+    color: #f03d37;
+    font-size: 48rpx;
+    font-weight: 500;
+}
+
+.price>view>text:last-child {
+    font-size: 28rpx;
+    color: #f03d37;
+}
+
+.price>text {
+    color: #999;
+    font-size: 26rpx;
+}
+
+.buy_seat_display {
+    margin-top: 10rpx;
+    display: flex;
+    border-bottom: 1rpx solid #e6e6e6;
+    padding-bottom: 15rpx;
+    flex-wrap: wrap;
+}
+
+.buy_seat_display>view {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 7rpx;
+    border: 1rpx solid #e6e6e6;
+    font-size: 26rpx;
+    padding: 12rpx 10rpx;
+    width: 147rpx;
+    margin-right: 10rpx;
+    color: #666;
+}
+
+.buy_seat_display>view:nth-child(4) {
+    margin-right: 0;
+}
+
+
+.buy_seat_display>view>text:last-child {
+    color: #999;
+}
+
+.buy_seat_display>view:first-child {
+    margin-left: 0;
+}
+
+.buy_seat_display>view:last-child {
+    margin-right: 0;
+}
+.logo_img{
+    width: 210rpx;
+    height: 50rpx;
+    margin-top: 30rpx;
+}

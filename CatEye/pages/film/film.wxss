@@ -1,0 +1,243 @@
+/* .page-body-info {
+  padding-bottom: 0;
+  height: 230px;
+}
+.userinfo-avatar {
+  border-radius: 128rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+.userinfo-nickname {
+  margin-top: 20rpx;
+  font-size: 38rpx;
+} */
+
+page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar {
+    flex: none;
+    background: #fff;
+    border-bottom: 1rpx solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .item {
+    line-height: 80rpx;
+    height: 80rpx;
+    padding: 20rpx 25rpx;
+    margin: 0 20rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #666;
+    font-weight: 600;
+}
+
+.navbar .item.active {
+    color: #f03d37;
+    border-bottom: 5rpx solid #f03d37;
+}
+
+.search {
+    border-left: 1rpx solid #e6e6e6;
+    padding: 0 25rpx;
+    height: 84rpx;
+    line-height: 100rpx;
+}
+
+.search_img {
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.address {
+    font-size: 26rpx;
+    color: #666;
+    margin-left: 24rpx;
+}
+
+.address_icon {
+    display: inline-block;
+    height: 1rpx;
+    border: 11rpx solid transparent;
+    border-top-color: #b0b0b0;
+    position: relative;
+    top: 8rpx;
+    left: 5rpx;
+}
+
+.hotFilm_list {
+    padding: 0 20rpx;
+}
+
+.hotFilm_list_inner {
+    padding: 20rpx 0;
+    display: flex;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.hotFilm_img {
+    margin-right: 20rpx;
+    height: 188rpx;
+    position: relative;
+}
+
+.hotFilm_img>image:first-child {
+    width: 135rpx;
+    height: 188rpx;
+}
+
+.playBtn {
+    position: absolute;
+    width: 65rpx;
+    height: 65rpx;
+    left: 38rpx;
+    top: 64rpx;
+}
+
+.hotFilm_info {
+    margin-top: 6rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 456rpx;
+    justify-content: space-between;
+    color: #666;
+    font-size: 26rpx;
+    height: 130rpx;
+}
+
+.hotFilm_actor {
+    width: 420rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hotFilm_name {
+    width: 420rpx;
+}
+
+.comingFilm_name {
+    width: 490rpx;
+}
+
+.hotFilm_name>text:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.user_point>text {
+    color: #faaf00;
+    font-size: 28rpx;
+    font-weight: 500;
+}
+
+.user_point>text:last-child {
+    font-size: 22rpx;
+    font-weight: normal;
+}
+
+.button {
+    border-radius: 8rpx;
+    height: 55rpx;
+    width: 94rpx;
+    text-align: center;
+    line-height: 55rpx;
+    font-size: 24rpx;
+    background: #f03d37;
+    color: white;
+    font-weight: normal;
+}
+
+.film_3D {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    border: 1rpx solid #3c9fe6;
+    border-radius: 6rpx;
+    color: white;
+    background: #3c9fe6;
+    transform: scale(0.85);
+    padding: 0 6rpx;
+    padding-bottom: 2rpx;
+    margin-bottom: 3rpx;
+}
+
+/* 待映  */
+
+.comingFilm_top {
+    padding: 20rpx 0;
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    width: 100%;
+}
+
+.comingFilm_top>scroll-view {
+    margin-top: 20rpx;
+    overflow-x: auto;
+}
+
+.welcome_film {
+    display: inline-block;
+    margin-right: 20rpx;
+}
+.welcome_film:first-child{
+    margin-left: 20rpx;
+}
+.want_img {
+    width: 50rpx;
+    height: 50rpx;
+    text-align: center;
+    line-height: 50rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.want_img>image {
+    width: 28rpx;
+    height: 24rpx;
+}
+
+.welcomeFilm_name {
+    font-size: 26rpx;
+    width: 165rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hotFilm_head {
+    font-size: 28rpx;
+    background: white;
+    margin-left: 20rpx;
+}
+
+.gray {
+    background: #f5f5f5;
+    width: 100%;
+    height: 20rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.coming_film_time {
+    font-size: 28rpx;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+}
+
+.comingFilm_btn {
+    background: #3c9fe6;
+}
+
+/*hover效果  */
+.hover {
+     background: #f5f5f5; 
+}

@@ -1,0 +1,105 @@
+.block {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22rpx;
+    margin: 25rpx;
+    border: 1rpx solid #e6e6e6;
+    border-radius: 10rpx;
+    position: relative;
+}
+
+.price {
+    background: #faaf00;
+    width: 28%;
+    height: 223rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+    position: relative;
+}
+
+.price>view:first-child {
+    font-size: 90rpx;
+    border-bottom: 1rpx solid white;
+    margin-bottom: 8rpx;
+    width: 120rpx;
+    text-align: center;
+    line-height: 50rpx;
+}
+
+.price>view:first-child>text {
+    font-size: 32rpx;
+}
+
+.tips {
+    padding: 20rpx 0;
+    width: 72%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time {
+    padding: 0 20rpx;
+    text-align: right;
+    color: #666;
+    height: 40rpx;
+    line-height: 60rpx;
+}
+
+.cinema_name {
+    border-bottom: 1rpx solid #e6e6e6;
+    height: 140rpx;
+    padding: 0 20rpx;
+}
+
+.cinema_name>view:first-child {
+    color: black;
+    font-size: 30rpx;
+}
+
+.cinema_name>view:last-child {
+    color: #666;
+    padding: 15rpx 40rpx;
+    padding-bottom: 20rpx;
+    padding-left: 0;
+}
+
+.store {
+    position: absolute;
+    right: 0;
+    border: 45rpx solid transparent;
+    border-top-right-radius: 10rpx;
+    border-top-color: #faaf00;
+    border-right-color: #faaf00;
+}
+
+.store_text {
+    color: white;
+    position: absolute;
+    z-index: 1;
+    right: 7rpx;
+    top: 14rpx;
+    transform: rotate(45deg);
+}
+
+.timeOut>.price {
+    background: #bfbfbf;
+}
+
+.timeOut .store {
+    border-top-color: #bfbfbf;
+    border-right-color: #bfbfbf;
+}
+.timeout_img{
+    position: absolute;
+    width: 120rpx;
+    height: 120rpx;
+    top: 18rpx;
+    right: 18rpx;
+    opacity: .6;
+}

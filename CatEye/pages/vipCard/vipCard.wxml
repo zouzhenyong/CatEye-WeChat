@@ -1,0 +1,24 @@
+<view wx:if="{{cinema_sale.length==0}}" style='text-align: center;margin-top:40%'>
+    <image src='../../img/no_search.png'></image>
+    <view class='no_card'>你还没有影院会员卡</view>
+    <navigator url='../noCard/noCard' class='buy_card' hover-class='red'>开通更多影院会员卡</navigator>
+</view>
+<view wx:else>
+    <navigator hover-class='none' url='../room/room?id={{item._id}}' wx:for="{{cinema_sale}}" wx:key="{{index}}" class='card'>
+        <view class='head'>
+            <image class='sale_img' src='../../img/sale.png'></image>
+            <view>{{item.cinema_name}}</view>
+        </view>
+        <view class='middle'>购票享超值优惠</view>
+        <view class='bottom'>
+            <view>2018-08-31到期</view>
+            <view class='price'>
+                <image class='right' src='../../img/have.png'></image>
+                <text>已开通</text>
+            </view>
+        </view>
+        <view class='store'></view>
+        <view class='store_text'>已开通</view>
+    </navigator>
+    <navigator style='margin-top:60rpx' url='../noCard/noCard' class='buy_card' hover-class='red'>开通更多影院会员卡</navigator>
+</view>

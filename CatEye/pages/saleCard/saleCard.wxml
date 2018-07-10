@@ -1,0 +1,84 @@
+<view class='card'>
+    <view class='head'>
+        <image class='sale_img' src='../../img/sale.png'></image>
+        <view>{{cinemaData.cinema_name}}</view>
+    </view>
+    <view class='middle'>购票享超值优惠</view>
+    <view class='bottom'>
+        <view>【有效期6个月，不可退换】</view>
+        <view class='price'>售价:￥38</view>
+    </view>
+    <view class='store'></view>
+    <text class='store_text'>折扣卡</text>
+</view>
+<view class='gray'></view>
+<view style='padding-left:25rpx;'>
+    <view class='title'>会员卡权益</view>
+    <view class='list'>
+        <view>
+            <image class='icon' src='../../img/icon_tab.png'></image>
+        </view>
+        <view class='text'>
+            <view>每天限购4张会员票立减¥8</view>
+            <view>开卡或续费后，首次购买电影票时，可在原优惠价基础上享受额外优惠，最多可购买4张特惠票</view>
+        </view>
+    </view>
+    <view class='list'>
+        <view>
+            <image class='icon' src='../../img/icon_ticket.png'></image>
+        </view>
+        <view class='text'>
+            <view>购票享超值会员价</view>
+            <view>有效期内，在会员卡支持影院购票可享优惠价；享受会员卡优惠的场次及价格动态变化，优惠幅度由影院决定；每天限购8张会员票，超出后需以非优惠价格购买</view>
+        </view>
+    </view>
+</view>
+<view class='gray'></view>
+<view style='padding-left:25rpx;'>
+    <view class='title'>使用须知</view>
+    <view class='tips'>
+        <view>1. 每天限购4张会员票（不包含退票），超过的电影票不享受会员价</view>
+        <view>2. 购买本卡仅作为购票优惠凭证，卡内没有余额</view>
+        <view>3. 本卡一经售出，不可退换</view>
+    </view>
+</view>
+<view class='gray'></view>
+<view class='cinema_num'>仅限以下影院使用</view>
+<view class='city'>成都</view>
+<view>
+    <view class='navigator' wx:key="{{index}}">
+        <view class='cinema'>
+            <view class='cinema_name'>
+                <text>{{cinemaData.cinema_name}}</text>
+                <view>
+                    <text>18</text>
+                    <text>元起</text>
+                </view>
+            </view>
+            <view class='cinema_info'>
+                <view>
+                    <text class='cinema_add'>{{cinemaData.cinema_add}} 1.23km</text>
+                </view>
+            </view>
+        </view>
+        <navigator url="../room/room?id={{cinemaData._id}}" catchtap='buy_ticket' class='button'>购票</navigator>
+    </view>
+</view>
+<view class='gray'></view>
+<view class='buyBlock'>
+    <checkbox-group bindchange="clickCheck">
+        <label class="checkbox">
+            <checkbox value="agree" checked='{{checked}}' />
+            <view>我已阅读并同意
+                <text>《会员卡协议》</text>
+            </view>
+        </label>
+    </checkbox-group>
+    <view class='btn'>
+        <view>38
+            <text>元</text>
+        </view>
+        <view wx:if="{{checked}}" class="buyBtn agree" bindtap='buyBtn'>我要开卡</view>        
+        <view wx:else class="buyBtn">我要开卡</view>
+    </view>
+</view>

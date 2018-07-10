@@ -1,0 +1,70 @@
+
+.login_container{
+    text-align: center;
+    margin-top: 100rpx;
+
+}
+.title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+        margin-bottom: 80rpx;
+}
+.title_text{
+    margin: 0 15rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+.title>text{
+    margin: 10rpx 0;
+    color: #e6e6e6;
+    font-size: 50rpx;
+    line-height: 5rpx;
+    position: relative;
+    bottom: 1rpx;
+}
+button{
+    margin-bottom: 50rpx;
+    height: 80rpx;
+    width: 600rpx;
+    line-height: 80rpx;
+    color: white;
+    font-size: 26rpx;
+    background: #1AAD16;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+image{
+    width: 45rpx;
+    height: 45rpx;
+    margin-right: 10rpx;
+}
+.line{
+    width: 120rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+.phoneBtn{
+    background: white;
+    color: #1AAD16;
+    border: 1rpx solid #1AAD16;
+}
+.phoneBtn image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 5rpx;
+}
+.bottom{
+    text-align: center;
+    font-size: 24rpx;
+    margin-top: 80%;
+}
+.bottom>view{
+    margin-bottom: 5rpx;
+}
+.bottom>view:first-child{
+    color: #666;
+}
+.bottom>view:last-child{
+    color: rgb(51, 103, 214);
+}

@@ -1,0 +1,34 @@
+<view wx:if="{{watchedFilmArr.length!=0}}">
+    <view class='title'>看过{{watchedFilmArr.length}}部电影</view>
+    <view class='wantFilm_container'>
+        <view wx:for="{{watchedFilmArr}}" wx:key="{{index}}" class='wantFilm_list' hover-class='hover'>
+            <view class='wantFilm_list_inner'>
+                <view class='wantFilm_img'>
+                    <image src="{{FileIP+item.film_img}}"></image>
+                </view>
+                <navigator url="../filmDetails/filmDetails?id={{item.film_id}}&type=hot" hover-class="hover" style='display:flex;flex-direction:column'>
+                    <view class='wantFilm_name' style='display:flex;align-items:center'>
+                        <text style='font-size:34rpx;margin-right:4rpx;color:black;'>{{item.film_name}}</text>
+                        <text wx:if="{{item.film_nd!='2D'}}" class='film_3D'>{{item.film_nd}}</text>
+                    </view>
+                    <view>
+                        <view class='wantFilm_info'>
+                            <view style='margin-right:8rpx;'>我评:</view>
+                            <view class='star'>
+                                <image src='../../img/full_star.png' wx:for='{{ item.point/2-1 }}' wx:key='s'></image>
+                                <image src='../../img/full_star.png' wx:if='{{ item.point%2==0 }}'></image>
+                                <image src='../../img/half_star.png' wx:if='{{ item.point%2!=0 }}'></image>
+                            </view>
+                            <view class='point'>{{item.point}}分</view>
+                        </view>
+                        <text class='wantFilm_actor'>{{item.content}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else style='text-align: center;margin-top:40%'>
+    <image src='../../img/no_search.png'></image>
+    <view class='no_film'>暂无已评电影</view>
+</view>

@@ -1,0 +1,21 @@
+<view class='login_container'>
+    <view class='title'>
+        <view class='line'></view>
+        <text style='margin-left:15rpx;'>·</text>
+        <view class='title_text'> 推荐方式登录 </view>
+        <text style='margin-right:15rpx;'>·</text>
+        <view class='line'></view>
+    </view>
+    <button open-type="getUserInfo" hover-class='none' bindgetuserinfo="canGetUserInfo">
+        <image src='../../img/weixin.png'></image>
+        <text>微信账号登录</text>
+    </button>
+    <button class='phoneBtn'>
+        <image src='../../img/phone.png'></image>
+        <text>手机号一键登录</text>
+    </button>
+</view>
+<view class='bottom'>
+    <view>其他方式登录</view>
+    <view>账号密码登录</view>
+</view>

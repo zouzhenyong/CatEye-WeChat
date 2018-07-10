@@ -1,0 +1,351 @@
+.cinema_info {
+    display: flex;
+    padding: 25rpx 35rpx;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+.position_icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-bottom: 10rpx;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.cinema_name {
+    font-size: 32rpx;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.cinema_name>text:last-child {
+    font-size: 26rpx;
+    margin-top: 6rpx;
+    color: #999;
+}
+
+.gray_border {
+    border-left: 1rpx solid #e6e6e6;
+    height: 50rpx;
+    margin-right: 25rpx;
+}
+
+/*图--------------------------  */
+
+.film_img {
+    height: 224rpx;
+    width: 162rpx;
+}
+
+.film_box {
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform .3s,-webkit-transform .3s;  
+}
+
+.film_background {
+    width: 100%;
+    -webkit-filter: blur(15rpx); /* Chrome, Opera */
+    -moz-filter: blur(15rpx);
+    -ms-filter: blur(15rpx);
+    filter: blur(15rpx);
+    position: absolute;
+    top: 60rpx;
+    z-index: -1;
+    transition: all linear 0.2s !important;
+}
+
+.to_top {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    border: 14rpx solid transparent;
+    border-bottom-color: white;
+    left: 50%;
+    margin-left: -14rpx;
+}
+
+/*---------------------------------------------  */
+
+.film_background>image {
+    width: 100%;
+    /* transition: all linear .3s!important; */
+}
+
+.film_info {
+    padding: 20rpx;
+    background: white;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.film_name {
+    font-size: 32rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.film_name>view {
+    margin-left: 12rpx;
+    color: #faaf00;
+}
+
+.film_name>view>text:last-child {
+    font-size: 24rpx;
+}
+
+.film_time {
+    display: flex;
+    align-items: center;
+    color: #999;
+    font-size: 26rpx;
+    justify-content: center;
+}
+
+.film_time>text {
+    margin: 0 4rpx;
+}
+
+.line {
+    font-size: 20rpx;
+    font-weight: 600;
+}
+
+/*切换  */
+
+.navbar {
+    flex: none;
+    background: #fff;
+    border-bottom: 1rpx solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .item {
+    line-height: 90rpx;
+    height: 80rpx;
+    padding: 20rpx 25rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.navbar .item.active {
+    color: #f03d37;
+    border-bottom: 4rpx solid #f03d37;
+}
+
+.cinema_card {
+    padding: 25rpx 20rpx;
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    justify-content: space-between;
+    background: rgb(253, 248, 239);
+}
+
+.right {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.card {
+    background: #faaf00;
+    color: white;
+    border-radius: 4rpx;
+    padding: 1rpx 8rpx;
+    margin-right: 20rpx;
+    font-size: 20rpx;
+}
+
+.card_info {
+    color: #faaf00;
+    flex-grow: 1;
+}
+
+.buy_card {
+    color: #999;
+    display: flex;
+    align-items: center;
+}
+
+.film_time_info {
+    padding: 25rpx;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 26rpx;
+    border-top: 1rpx solid #e6e6e6;
+}
+
+.film_time_info>view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background: red; */
+}
+
+.film_time_info>view:first-child {
+    width: 20% !important;
+}
+
+.film_time_info>view:nth-child(2) {
+    width: 28%;
+}
+
+.film_time_info>view:nth-child(3) {
+    width: 30%;
+}
+
+.time>view:first-child {
+    font-size: 36rpx;
+}
+
+.film_type>view:first-child {
+    margin-top: 10rpx;
+}
+
+.film_type>view:last-child {
+    margin-top: 7rpx;
+}
+
+.time>view:last-child, .film_type>view:last-child {
+    color: #999;
+    font-size: 22rpx;
+}
+
+.film_price {
+    display: flex;
+    align-items: center;
+}
+
+.film_price>view:first-child {
+    font-size: 34rpx;
+    color: #f03d37;
+}
+
+.sale_card {
+    display: flex;
+    align-items: center;
+    font-size: 18rpx;
+    transform: scale(0.8);
+    position: relative;
+    top: 2rpx;
+    border: 2rpx solid #faaf00;
+    border-radius: 6rpx;
+}
+
+.sale_card>text:first-child {
+    color: white;
+    background: #faaf00;
+    padding: 1rpx 6rpx;
+}
+
+.sale_card>text:last-child {
+    color: #faaf00;
+    padding: 1rpx 6rpx;
+}
+
+.buy_btn {
+    padding: 10rpx 20rpx;
+    background: #f03d37;
+    border-radius: 6rpx;
+    color: white;
+    font-size: 24rpx;
+}
+
+.buy_container {
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.buy_container>view:first-child>view {
+    border-top: 0;
+}
+
+.gray {
+    background: #f5f5f5;
+    width: 100%;
+    height: 20rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.eat_top {
+    padding: 25rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.eat_mean {
+    padding: 25rpx;
+    padding-left: 0;
+    display: flex;
+    border-bottom: 1rpx solid #e6e6e6;
+}
+
+.eat_img {
+    width: 190rpx;
+    height: 140rpx;
+    margin-right: 25rpx;
+}
+
+.eat_info {
+    margin-top: 4rpx;
+}
+
+.eat_info>view:first-child {
+    font-size: 30rpx;
+}
+
+.eat_info>view:last-child {
+    font-size: 22rpx;
+    color: #999;
+    margin-bottom: 8rpx;
+    margin-top: 16rpx;
+}
+
+.eat_price_info, .eat_price {
+    display: flex;
+    align-items: center;
+}
+
+.eat_price_info {
+    justify-content: space-between;
+}
+
+.eat_price>text:first-child {
+    color: #f03d37;
+    display: flex;
+    font-size: 30rpx;
+}
+
+.eat_price>text:last-child {
+    margin-left: 10rpx;
+    position: relative;
+    top: 3rpx;
+}
+
+.eat_price>text {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.eat_num {
+    color: #999;
+    font-size: 24rpx;
+    position: relative;
+    top: 3rpx;
+}
+
+.hover {
+    background: #f5f5f5;
+}

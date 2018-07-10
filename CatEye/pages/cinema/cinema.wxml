@@ -1,0 +1,45 @@
+<!--搜索框-->
+<view class="navbar">
+    <view style='width:160rpx;line-height:40rpx'>
+        <text class='address'>成都</text>
+        <text class="address_icon"></text>
+    </view>
+    <!-- <view class='search_input' style='position:relative' bindtap='search'>
+        <input type="text" readonlyunselectable="on" placeholder="找影院" placeholder-style="color: #bfbfbf;text-align:center;font-size:26rpx" />
+        <image class='search_icon' src='../../img/search_gray.png'></image>
+    </view> -->
+    <view class='search_input' bindtap='search'>
+        <image class='search_icon' src='../../img/search_gray.png'></image>
+        <view style="color: #bfbfbf;font-size:26rpx">找影院</view>
+    </view>
+</view>
+<!--影院  -->
+<view>
+    <navigator wx:for="{{cinema_data}}" wx:key="{{index}}" url="../room/room?id={{item._id}}" style='padding:0 20rpx' hover-class='hover'>
+        <view class='cinema'>
+            <view class='cinema_name'>
+                <text>{{item.cinema_name}}</text>
+                <view>
+                    <text>{{18+index*2}}</text>
+                    <text>元起</text>
+                </view>
+            </view>
+            <view class='cinema_info'>
+                <view style='display:flex;justify-content: space-between;align-items:center'>
+                    <text class='cinema_add'>{{item.cinema_add}}</text>
+                    <text class='distance'>1.{{index}}km</text>
+                </view>
+                <view class='cinema_item'>
+                    <text>{{item.logo_seat[0]}}</text>
+                    <text wx:for="{{item.logo_room}}" wx:key="{{index}}">{{item}}</text>
+                    <text wx:if="{{item.logo_eat.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.logo_eat[0]}}</text>
+                    <text wx:if="{{item.logo_card.length!=0}}" style='color:#faaf00;border-color:#faaf00'>{{item.logo_card}}</text>
+                </view>
+                <view wx:if="{{item.logo_vip.length!=0}}">
+                    <text class='cinema_card'>卡</text>
+                    <text class='card_intro'>开卡特惠，首单2张立减14元</text>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>

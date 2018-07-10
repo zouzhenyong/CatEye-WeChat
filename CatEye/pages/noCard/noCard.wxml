@@ -1,0 +1,4 @@
+<view style='text-align: center;margin-top:40%'>
+    <image src='../../img/no_search.png'></image>
+    <view class='no_card'>该城市暂不支持影院会员卡</view>
+</view>
